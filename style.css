@@ -23,10 +23,16 @@ header{
     align-items: center;
 }
 main{
-    background-color: rgb(238, 238, 238);
+    background-color: rgb(255, 255, 255);
     padding: 10px;
     width: 800px;
     margin: auto;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 .logo{
     width: 20%;

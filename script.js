@@ -1,27 +1,21 @@
 "use strict";
-// destructure in objects :
-const obj = {
-    name: "siavash",
-    age: 19,
-    username: "30YA",
-    address: {
-        street: "valfajr",
-        city: "karaj"
-    },
-    marks: {
-        math: 15,
-        history: 20
-    }
+function onchange1(){
+    console.log(event.target.value);
+    console.log(`changed ...`);
 }
-const {name,age,address:{street}} = obj;
-const {city} = obj.address
-console.log(street);
-
-// destructure in array :
-const arr = [
-    "sia",
-    24,
-    "agh"
-];
-const [name1,age1,family1] = arr;
-console.log(age1);
+function fooking(){
+    console.log(event.ctrlKey);
+    if (event.ctrlKey) {
+        alert(`salam sooton`)
+    }
+    else(
+        alert(`siki girikh`)
+    )
+}
+function over() {
+    console.log(event);
+    event.target.innerHTML="siavash"
+}
+function keydown1() {
+    console.log(event);
+}
