@@ -6,9 +6,10 @@
     font-weight: bolder;
   }
 *,body{
-    font-family: sahel;
+    font-family:sans-serif;
     margin: 0;
     padding: 0;
+    background-color: rgb(34, 34, 34);
 }
 ul,li,ol{
     text-decoration: none;
@@ -18,12 +19,8 @@ a{
     text-decoration:none;
     color: black;
 }
-header{
-    display: flex;
-    align-items: center;
-}
 main{
-    background-color: rgb(255, 255, 255);
+    color: blanchedalmond;
     padding: 10px;
     width: 800px;
     margin: auto;
@@ -32,36 +29,8 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 40px;
 }
-.logo{
-    width: 20%;
-    margin: 0 20px;
-}
-.logo img{
-    width: 100%;
-    vertical-align: -10px;
-}
-.menu > ul > li{
-    background-color: rgb(207, 0, 0);
-    padding: 10px;
-    text-align: center;
-    display: inline-block;
-    border-radius: 13px;
-    position: relative;
-}
-.menu > ul > li a{
-    color: white;
-}
-.menu ul .drop ul{
-    position: absolute;
-    background-color: orange;
-    width: 200px;
-    top: 50px;
-    right: 0;
-    border-radius: 20px;
-    display: none;
-}
-.menu ul .drop:hover ul{
-    display: block;
+.clock{
+    font-size: 70px;
 }
