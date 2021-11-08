@@ -1,18 +1,47 @@
 "use strict";
-// for in && for of
-
-/*for in : For Objects{
-    let user = {
-        name:"siavash",
-        age:20
-  }  
-  for(let key in user){
-      console.log(key,user[key]);
+// This keyword :
+const obj = {
+  name: 'siavash',
+  age: 20,
+  faceList: ["eye","lip"],
+  test: function () {
+    console.log(this);
+    this.faceList.forEach(val => {
+      console.log(this);
+    })
   }
-}*/
-/*for of : For Array{
-    let colors = ["sia","ali","reza"];
-    for(let item of colors){
-        console.log(item);
-    }
-}*/
+}
+obj.test();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let obj = {
+//   color:"red",
+//   opacity:12,
+//   list:[12,13,14,15],
+//   testfunc: function () {
+//     this.list.forEach(function(val) {
+//       console.log(this);
+//     })
+//   }
+// }
+// obj.testfunc();

@@ -1,5 +1,6 @@
 Git config --global user.name "siavash aghazadeh"
 Git config --global user.email siavash.agh@gmail.com 
+Git config --global --list
 Git init , Git status
 Git add . || add <file>
 Git add patch <file>
