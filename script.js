@@ -1,47 +1,27 @@
 "use strict";
-// This keyword :
-const obj = {
-  name: 'siavash',
-  age: 20,
-  faceList: ["eye","lip"],
-  test: function () {
-    console.log(this);
-    this.faceList.forEach(val => {
-      console.log(this);
-    })
+// Factory function: ------------------------------------
+function creatCircle(redius,redius2) {
+  return {
+    redius: redius,
+    redius2,
+    move: function () {
+      console.log("move circle");
+    },
+    move2(){
+      console.log("move2 circle");
+    }
   }
 }
-obj.test();
+console.log(creatCircle(1,5));
+let circle2 = creatCircle(4,7);
 
+// Constructor function: -------------------------------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let obj = {
-//   color:"red",
-//   opacity:12,
-//   list:[12,13,14,15],
-//   testfunc: function () {
-//     this.list.forEach(function(val) {
-//       console.log(this);
-//     })
-//   }
-// }
-// obj.testfunc();
+function Circle(redius) {
+  this.redius = redius;
+  this.move = function () {
+    console.log("move circle");
+  }
+}
+let circle3 = new Circle(8);
+console.log(circle3);
