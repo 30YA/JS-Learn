@@ -33,3 +33,11 @@ main{
 .clock{
     font-size: 70px;
 }
+.sia{
+    font-size: 35px;
+    color: blanchedalmond;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}

@@ -1,37 +1,21 @@
 "use strict";
-// work with creatElement $$ Document Fragment : ------------------------------------
-const main1 = document.querySelector("main");
-const newElementt = document.createTextNode("Hellow body");
-const newElement = document.createElement("table");
-newElement.id = "table-5";
-newElement.className = "table";
-newElement.innerHTML = "<h1>siavash</h1>";
-// main1.append(newElement);
-// main1.prepend(newElement);
-// main1.after(newElement);
-main1.before(newElement);
-newElement.remove();
-let newElement2 = newElement.cloneNode(true)
-let newElement3 = newElement.cloneNode(false)
-console.log(newElement2,newElement3);
+// work with class and style in DOM : ------------------------------------
+const main = document.querySelector("main");
+main.classList.add("main-color","ahmad");
+main.classList.remove("main-color");
+console.log(main.classList.contains("main"));
+main.classList.toggle("fuck");//if have this class ,remove it but if dont have , add it
+console.log(main.classList);
 
-//----------------------Fragment-----------------------------
-const frag = document.createDocumentFragment();
-frag.append(document.createElement("div"));
-frag.append(document.createTextNode("Hellow Mother"));
-document.body.append(frag);
+//-------------- getComputedStyle & style-----------
+const p = document.getElementById("par");
+console.log(p.style);
+p.style.backgroundColor = prompt("enter")
+const p_style = getComputedStyle(p);
+console.log(p_style.padding);
 
-//---------------------------------------------------
-function makeList(where) {
-  if (!(where in main1)) {
-    return alert("siavash");
-  }
-  const newElement = document.createElement("table");
-  newElement.id = "table-5";
-  newElement.className = "table";
-  main1[where](newElement);
-}
+//------------------work with toggle--------------
+const p2 = document.getElementById("par")
 function getPlace() {
-  const userr = prompt("where :");
-  makeList(userr);
+    p2.classList.toggle("sia");
 }
