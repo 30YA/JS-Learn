@@ -23,6 +23,7 @@ main{
     color: blanchedalmond;
     padding: 10px;
     margin: auto;
+    position: relative;
 }
 .center{
     display: flex;
@@ -40,4 +41,44 @@ main{
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+.circle{
+    width: 50px;
+    height: 50px;
+    background-color: chartreuse;
+    position: absolute;
+    border-radius: 100%;
+    top: 0;
+}
+.examplebox{
+    color: whitesmoke;
+}
+.examplebox .example1{
+    height: 50px;
+    border: 1px solid whitesmoke;
+    padding: 20px;
+    overflow: scroll;
+    margin-bottom: 500px;
+    margin-top: 500px;
+}
+.examplebox .example2{
+    height: 50px;
+    border: 1px solid whitesmoke;
+    padding: 20px;
+    overflow: scroll;
+    margin-bottom: 500px;
+}
+.examplebox .example3{
+    height: 50px;
+    border: 1px solid whitesmoke;
+    padding: 20px;
+    overflow: scroll;
+    margin-bottom: 500px;
+}
+button{
+    color: whitesmoke;
+    padding: 20px;
+    background-color: blue;
+    position: sticky;
+    bottom: 0;
 }
