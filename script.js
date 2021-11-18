@@ -1,15 +1,16 @@
 "use strict";
-// rest operator : ------------------------------------
-
-function test() {
-    const arr = [...arguments];
-    let r = arr.reduce((pre,val) => {return pre += val},0)
-    console.log(r);
+// Getter & Setter : ------------------------------------
+const obj = {
+    name: "sia",
+    last: "agh",
+    get test(){
+        console.log(`${this.name} ${this.last}`);
+    },
+    set test(value){
+        const sp = value.split(" ");
+        this.name = sp[0];
+        this.last = sp[1];
+    }
 }
-test(5,4,7,3);
-
-function test(...argu) {
-    let r = argu.reduce((pre,val) => {return pre + val},0);
-    return r;
-}
-console.log(test(5,4,7,3));
+obj.test = "ali rin";
+obj.test;
