@@ -1,26 +1,29 @@
 "use strict";
-// Try catch : Error handling : ------------------------------------
-const obj = {
-    name: "sia",
-    last: "agh",
-    get test(){
-        console.log(`${this.name} ${this.last}`);
-    },
-    set test(value){
-        if (typeof value != 'string') {
-            throw new Error(" this is fucking wrong");
-        }
-        const sp = value.split(" ");
-        if (sp.length < 2) {
-            throw new Error(" siiick");
-        }
-        this.name = sp[0];
-        this.last = sp[1];
-    }
+// filter of products project : ------------------------------------
+
+const inp = document.getElementById("txt");
+const myDiv = document.getElementById("myDiv");
+let txtvalue = '';
+const products = [
+    {title: 'javascript course'},
+    {title: 'React Js course'},
+    {title: 'Html & css course'},
+    {title: 'Flex & Grid course'},
+]
+function filterProducts(pro,txv) {
+    myDiv.innerHTML = "";
+    const filter = pro.filter(item => {
+        return item.title.toLowerCase().includes(txv.toLowerCase());
+    })
+    filter.forEach(element => {
+        const p = document.createElement("p");
+        p.classList = "par";
+        p.textContent = element.title;
+        myDiv.prepend(p);
+    });
 }
-try {
-    obj.test = "siavash";
-    obj.test;
-} catch (error) {
-    console.log(error);
-}
+inp.addEventListener("input", (val) => {
+    txtvalue = val.target.value;
+    filterProducts(products,txtvalue);
+})
+filterProducts(products,txtvalue);

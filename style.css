@@ -9,7 +9,6 @@
     font-family:sans-serif;
     margin: 0;
     padding: 0;
-    background-color: rgb(34, 34, 34);
 }
 ul,li,ol{
     text-decoration: none;
@@ -19,66 +18,26 @@ a{
     text-decoration:none;
     color: black;
 }
-main{
-    color: blanchedalmond;
-    padding: 10px;
-    margin: auto;
-    position: relative;
+html,body{
+    height: 100%;
 }
 .center{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    width: 100%;
+    height: 100%;
 }
-.clock{
-    font-size: 70px;
+.box{
+    width: 70%;
+    height: 70%;
+    background-image: url("111.jpg");
+    background-size: cover;
+    background-position-x: center;
+    transition: all 0.9s;
+    position: fixed;
 }
-.sia{
-    font-size: 35px;
-    color: blanchedalmond;
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-.circle{
-    width: 50px;
-    height: 50px;
-    background-color: chartreuse;
-    position: absolute;
-    border-radius: 100%;
-    top: 0;
-}
-.examplebox{
-    color: whitesmoke;
-}
-.examplebox .example1{
-    height: 50px;
-    border: 1px solid whitesmoke;
-    padding: 20px;
-    overflow: scroll;
-    margin-bottom: 500px;
-    margin-top: 500px;
-}
-.examplebox .example2{
-    height: 50px;
-    border: 1px solid whitesmoke;
-    padding: 20px;
-    overflow: scroll;
-    margin-bottom: 500px;
-}
-.examplebox .example3{
-    height: 50px;
-    border: 1px solid whitesmoke;
-    padding: 20px;
-    overflow: scroll;
-    margin-bottom: 500px;
-}
-button{
-    color: whitesmoke;
-    padding: 20px;
-    background-color: blue;
-    position: sticky;
-    bottom: 0;
+.par{
+    font-size: 18px;
+    margin: 10px;
 }
