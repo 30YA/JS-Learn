@@ -1,29 +1,16 @@
 "use strict";
-// filter of products project : ------------------------------------
+// number counter : ------------------------------------
 
-const inp = document.getElementById("txt");
-const myDiv = document.getElementById("myDiv");
-let txtvalue = '';
-const products = [
-    {title: 'javascript course'},
-    {title: 'React Js course'},
-    {title: 'Html & css course'},
-    {title: 'Flex & Grid course'},
-]
-function filterProducts(pro,txv) {
-    myDiv.innerHTML = "";
-    const filter = pro.filter(item => {
-        return item.title.toLowerCase().includes(txv.toLowerCase());
+const btn = document.querySelectorAll('.btn');
+const num = document.querySelector('.par span');
+btn.forEach(val => {
+    val.addEventListener('click',item => {
+        if (val.classList.contains("positive")) {
+            num.textContent++;
+        }else if (val.classList.contains("negative")) {
+            num.textContent--;
+        }else{
+            num.textContent = 0;
+        }
     })
-    filter.forEach(element => {
-        const p = document.createElement("p");
-        p.classList = "par";
-        p.textContent = element.title;
-        myDiv.prepend(p);
-    });
-}
-inp.addEventListener("input", (val) => {
-    txtvalue = val.target.value;
-    filterProducts(products,txtvalue);
 })
-filterProducts(products,txtvalue);
