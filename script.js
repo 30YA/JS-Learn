@@ -1,27 +1,45 @@
 "use strict";
-// try and catch && Error handeling : ----------------------------------
-const obj = {};
-try {
-    console.log(obj.test.sia);
-} catch (error) {
-    console.dir(error);
-    alert("siavash");
+// XMLHttp Request & fetch & Api & JSON : ----------------------------------
+// with GET : --------------------------------------------------------------
+const xhr = new XMLHttpRequest();
+xhr.open("GET","https://jsonplaceholder.typicode.com/users");
+xhr.onload = () => {
+    console.log(JSON.parse(xhr.response));
+    console.log(xhr.status);
 }
-//------------------------------------------
-const array = [];
-function randomnum() {
-    if (array.length == 10) {
-        throw new Error("out of range");
-    }
-    let rand = Math.floor(Math.random() * 10);
-    if (array.includes(rand)) {
-        console.log("get fuuuuuuuuuuuuuuuuck");
-        return randomnum();
-    }
-    array.push(rand);
-    return rand;
+xhr.send();
+
+// with POST : -------------------------------------------------------------
+const xhr2 = new XMLHttpRequest();
+xhr2.open("POST","https://jsonplaceholder.typicode.com/users");
+xhr2.onload = () => {
+    console.log(JSON.parse(xhr2.response));
+    console.log(xhr2.status);
 }
-for (let x = 0; x < 155; x++) {
-    console.log(randomnum());
+const siavash = {
+    name: "siavash",
+    age: 23
 }
-console.log(array);
+xhr2.setRequestHeader("Content-type", "Application/JSON")
+xhr2.send(JSON.stringify(siavash));
+
+// with fetch : -------------------------------------------------------------
+// fetch GET :
+fetch('https://jsonplaceholder.typicode.com/posts')
+  .then((response) => response.json())
+  .then((json) => console.log(json));
+  
+// fetch POST :
+fetch('https://jsonplaceholder.typicode.com/posts', {
+  method: 'POST',
+  body: JSON.stringify({
+    title: 'foo',
+    body: 'bar',
+    userId: 1,
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => console.log(json));
