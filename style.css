@@ -36,6 +36,7 @@ html,body{
     font-size: 22px;
     margin: 10px;
     color: aliceblue;
+    display: inline;
 }
 button{
     width: 100px;
