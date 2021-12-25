@@ -1,24 +1,24 @@
 "use strict";
 //------------------------------------
+let filterVal = {
+  inputVal: ''
+};
 function GetSavedProducts() {
     return localStorage.getItem('products') ?
     JSON.parse(localStorage.getItem('products')) :
-    [
-      {id: uuidv4(), title: "booke1", ava: false},
-      {id: uuidv4(), title: "booke2", ava: true},
-      {id: uuidv4(), title: "booke3", ava: false},
-      {id: uuidv4(), title: "booke4", ava: false},
-    ];
+    [];
 }
 function saveItems(products) {
     localStorage.setItem('products',JSON.stringify(products));
 }
 function addProducts(value) {
     document.querySelector('.products').textContent = '';
+    const id = uuidv4();
     const items = {
-      id: `${uuidv4()}`,
+      id: id,
       title:`${value}`,
-      ava: true
+      ava: true,
+      price: '',
     };
     //Error handeling
     if (items.title !== '') {
@@ -42,41 +42,51 @@ function renderProducts(products,filterVal,checkbox) {
     document.querySelector('.products').innerHTML = '';
     filteredItem.forEach((items) => {
       const divTag = document.createElement('div');
-      const checkbox = document.createElement('input');
-      const pTag = document.createElement('p');
-      const RMbutton = document.createElement('input');
+    const checkbox = document.createElement('input');
+    const aTag = document.createElement('a');
+    const RMbutton = document.createElement('input');
 
-      checkbox.setAttribute('type','checkbox');
-      divTag.appendChild(checkbox);
+    checkbox.setAttribute('type','checkbox');
+    checkbox.checked = !items.ava;
+    checkbox.addEventListener('change',(e) => {
+      existOrNot(items,e);
+    })
+    divTag.appendChild(checkbox);
 
-      pTag.textContent = items.title;
-      pTag.classList.add('par');
-      divTag.appendChild(pTag);
+    aTag.textContent = items.title;
+    aTag.classList.add('par');
+    aTag.setAttribute('href','./edit-product.html');
+    divTag.appendChild(aTag);
 
-      RMbutton.setAttribute('type','button');
-      RMbutton.setAttribute('value','Reamove');
-      RMbutton.classList.add('button');
-      RMbutton.addEventListener('click', item => {
-        removeProducts(items.id);
-      })
-      divTag.appendChild(RMbutton);
+    RMbutton.setAttribute('type','button');
+    RMbutton.setAttribute('value','Reamove');
+    RMbutton.classList.add('button');
+    RMbutton.addEventListener('click', () => {
+      removeProducts(items.id);
+    })
+    divTag.appendChild(RMbutton);
 
-      document.querySelector('.products').append(divTag);
+    document.querySelector('.products').append(divTag);
     })
   }
 function creatProductDOM(products) {
   products.forEach((items) => {
     const divTag = document.createElement('div');
     const checkbox = document.createElement('input');
-    const pTag = document.createElement('p');
+    const aTag = document.createElement('a');
     const RMbutton = document.createElement('input');
 
     checkbox.setAttribute('type','checkbox');
+    checkbox.checked = !items.ava;
+    checkbox.addEventListener('change',(e) => {
+      existOrNot(items,e);
+    })
     divTag.appendChild(checkbox);
 
-    pTag.textContent = items.title;
-    pTag.classList.add('par');
-    divTag.appendChild(pTag);
+    aTag.textContent = items.title;
+    aTag.classList.add('par');
+    aTag.setAttribute('href',`./edit-product.html#${items.id}`);
+    divTag.appendChild(aTag);
 
     RMbutton.setAttribute('type','button');
     RMbutton.setAttribute('value','Reamove');
@@ -95,6 +105,12 @@ function removeProducts(id) {
     return item.id === id;
   })
   products.splice(productIndex,1);
+  saveItems(products);
+  renderProducts(products,filterVal,checkbox);
+}
+// exist products --------------------------
+function existOrNot(check,e) {
+  check.ava = !e.target.checked;
   saveItems(products);
   renderProducts(products,filterVal,checkbox);
 }
