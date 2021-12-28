@@ -14,11 +14,14 @@ function saveItems(products) {
 function addProducts(value) {
     document.querySelector('.products').textContent = '';
     const id = uuidv4();
+    const time = moment().valueOf();
     const items = {
       id: id,
       title:`${value}`,
       ava: true,
       price: '',
+      updated: time,
+      created: time
     };
     //Error handeling
     if (items.title !== '') {
