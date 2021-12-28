@@ -28,6 +28,8 @@ search.addEventListener('input',(e) => {
   renderProducts(products,filterVal);
 })
 // -------------------------------------------------------
-// const now = moment().valueOf();
-// now.locale('fa');
-// console.log(now.format("dddd , D , MMMM , YYYY - h:mm:ss"));
+const select = document.getElementById('select');
+select.addEventListener('change',(e) => {
+  filterVal.selectVal = e.target.value;
+  renderProducts(products,filterVal);
+})

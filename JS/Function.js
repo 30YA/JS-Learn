@@ -1,7 +1,8 @@
 "use strict";
 //------------------------------------
 let filterVal = {
-  inputVal: ''
+  inputVal: '',
+  selectVal: 'all'
 };
 function GetSavedProducts() {
     return localStorage.getItem('products') ?
@@ -34,6 +35,7 @@ function addProducts(value) {
     creatProductDOM(products)
   }
 function renderProducts(products,filterVal,checkbox) {
+    selectFilter(products,filterVal);
     let filteredItem = products.filter( item => {
       return item.title.toLowerCase().includes(filterVal.inputVal.toLowerCase());
     })
@@ -72,6 +74,29 @@ function renderProducts(products,filterVal,checkbox) {
     document.querySelector('.products').append(divTag);
     })
   }
+function selectFilter(products,filterVal) {
+  if (filterVal.selectVal === 'edited') {
+    return products.sort((a,b) => {
+      if (a.updated > b.updated) {
+        return -1;
+      }else if (a.updated < b.updated) {
+        return 1;
+      }else{
+        return 0;
+      }
+    })
+  }else if (filterVal.selectVal === 'all') {
+    return products.sort((a,b) => {
+      if (a.created > b.created) {
+        return 1;
+      }else if (a.created < b.created) {
+        return -1;
+      }else{
+        return 0;
+      }
+    })
+  }
+}
 function creatProductDOM(products) {
   products.forEach((items) => {
     const divTag = document.createElement('div');
