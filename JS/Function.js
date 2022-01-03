@@ -5,9 +5,13 @@ let filterVal = {
   selectVal: 'all'
 };
 function GetSavedProducts() {
-    return localStorage.getItem('products') ?
-    JSON.parse(localStorage.getItem('products')) :
-    [];
+    try {
+      return localStorage.getItem('products') ?
+      JSON.parse(localStorage.getItem('products')) :
+      [];
+    } catch (error) {
+      return [];
+    }
 }
 function saveItems(products) {
     localStorage.setItem('products',JSON.stringify(products));

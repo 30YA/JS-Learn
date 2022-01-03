@@ -32,4 +32,5 @@ const select = document.getElementById('select');
 select.addEventListener('change',(e) => {
   filterVal.selectVal = e.target.value;
   renderProducts(products,filterVal);
-})
+});
+//---------------------------------------------------------
