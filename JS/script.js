@@ -1,30 +1,32 @@
 "use strict";
-// oop : __proto__ & prototype & (privet , public)
-const animal = {
-  run: true,
-  walk(){
-    console.log('palasht');
+// oop : class & inheritance
+
+class animal {
+  //class fields :
+  lastname = 'aghazadeh';
+  //cunstructor :
+  constructor() {
+    this.name = 'siavash';
+    this.age = 28;
+  }
+  //methodes :
+  running() {
+    console.log(this.lastname);
+    console.log('---run---');
   }
 }
-const shir = {
-  __proto__: animal,
-  jump: true
+const animal1 = new animal();
+console.log(animal1);
+setTimeout(animal1.running.bind(animal1),1000)
+//-------------------------------inheritance---------------------
+class Rabit extends animal{
+  color = 'red';
+  walk() {
+    return '--- Jump ---';
+  }
 }
-// console.log(shir);
-//-----------------------------------
-function testFunc() {
-  console.log('ahmagh');
-}
-function cat() {
-  this.name = "catty";
-  let lastname = "ali"
-}
-cat.prototype = animal;
-cat.prototype.testFunc = testFunc;
-
-const cat1 = new cat();
-console.log(cat1);
-
+const Rabit1 = new Rabit();
+console.log(Rabit1);
 
 
 
