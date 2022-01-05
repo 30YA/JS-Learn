@@ -1,33 +1,21 @@
 "use strict";
-// oop : class & inheritance
+// oop : Getters & Setters & encapsulation
 
 class animal {
-  //class fields :
-  lastname = 'aghazadeh';
-  //cunstructor :
-  constructor() {
-    this.name = 'siavash';
-    this.age = 28;
+  constructor(name) {
+    this.name = name
   }
-  //methodes :
-  running() {
-    console.log(this.lastname);
-    console.log('---run---');
-  }
-}
-const animal1 = new animal();
-console.log(animal1);
-setTimeout(animal1.running.bind(animal1),1000)
-//-------------------------------inheritance---------------------
-class Rabit extends animal{
-  color = 'red';
-  walk() {
-    return '--- Jump ---';
-  }
-}
-const Rabit1 = new Rabit();
-console.log(Rabit1);
 
+  get walk() {
+    console.log(`${this.name} is walking`);
+  }
+  set walk(value) {
+    this.name = value;
+  }
+}
+const Rabit = new animal('rabit');
+Rabit.walk = 'siavash';
+Rabit.walk
 
 
 //--------------------------------------
