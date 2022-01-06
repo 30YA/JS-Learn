@@ -1,5 +1,5 @@
 "use strict";
-// callback-function 
+// promises
 const products = [
   {id: 1, name: 'book1'},
   {id: 2, name: 'book2'},
@@ -12,13 +12,28 @@ function getProduct() {
     console.log(sia);
 }
 
-function creatProduct(callback) {
-  setTimeout(() => {
-    products.push({id: 4, name: 'book4'});
-    callback();
-  }, 3000);
+function creatProduct() {
+  return new Promise((resolve,reject) => {
+    
+    setTimeout(() => {
+      products.push({
+        id: 4,
+        name: 'book4'
+      });
+      
+      const error = true;
+      if (!error) {
+        resolve();
+      }else{
+        reject('Errrrrrrrror');
+      }
+    }, 3000);
+
+  })
 }
-creatProduct(getProduct);
+creatProduct()
+   .then(getProduct)
+   .catch(err => { console.log(err); });
 
 
 
