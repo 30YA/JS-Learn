@@ -1,21 +1,25 @@
 "use strict";
-// oop : Getters & Setters & encapsulation
-
-class animal {
-  constructor(name) {
-    this.name = name
-  }
-
-  get walk() {
-    console.log(`${this.name} is walking`);
-  }
-  set walk(value) {
-    this.name = value;
-  }
+// callback-function 
+const products = [
+  {id: 1, name: 'book1'},
+  {id: 2, name: 'book2'},
+  {id: 3, name: 'book3'},
+]
+function getProduct() {
+    const sia = products.map(item => {
+      return `id = ${item.id} , name = ${item.name}`;
+    })
+    console.log(sia);
 }
-const Rabit = new animal('rabit');
-Rabit.walk = 'siavash';
-Rabit.walk
+
+function creatProduct(callback) {
+  setTimeout(() => {
+    products.push({id: 4, name: 'book4'});
+    callback();
+  }, 3000);
+}
+creatProduct(getProduct);
+
 
 
 //--------------------------------------
