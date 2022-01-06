@@ -1,5 +1,5 @@
 "use strict";
-// promises
+// async-await
 const products = [
   {id: 1, name: 'book1'},
   {id: 2, name: 'book2'},
@@ -21,7 +21,7 @@ function creatProduct() {
         name: 'book4'
       });
       
-      const error = true;
+      const error = false;
       if (!error) {
         resolve();
       }else{
@@ -31,10 +31,12 @@ function creatProduct() {
 
   })
 }
-creatProduct()
-   .then(getProduct)
-   .catch(err => { console.log(err); });
 
+async function getData() {
+  await creatProduct()
+  getProduct();
+}
+getData();
 
 
 //--------------------------------------
