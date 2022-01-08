@@ -1,6 +1,7 @@
 "use strict";
-// async-await
+// oop: static method/fields
 class animal {
+  static price = 58;
   constructor(value) {
     this.name = 'siavash';
     this.lastname = value;
@@ -8,6 +9,9 @@ class animal {
   }
   walk() {
     console.log('--- walking ---');
+  }
+  print() {
+    console.log(animal.price);
   }
 }
 
@@ -24,7 +28,7 @@ class Rabit extends animal{
 }
 const Rabit1 = new Rabit('aghazadeh','30YA');
 console.log(Rabit1);
-Rabit1.walk()
+Rabit1.print()
 
 
 //--------------------------------------
