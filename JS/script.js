@@ -1,42 +1,30 @@
 "use strict";
 // async-await
-const products = [
-  {id: 1, name: 'book1'},
-  {id: 2, name: 'book2'},
-  {id: 3, name: 'book3'},
-]
-function getProduct() {
-    const sia = products.map(item => {
-      return `id = ${item.id} , name = ${item.name}`;
-    })
-    console.log(sia);
+class animal {
+  constructor(value) {
+    this.name = 'siavash';
+    this.lastname = value;
+    this.age = 28;
+  }
+  walk() {
+    console.log('--- walking ---');
+  }
 }
 
-function creatProduct() {
-  return new Promise((resolve,reject) => {
-    
-    setTimeout(() => {
-      products.push({
-        id: 4,
-        name: 'book4'
-      });
-      
-      const error = false;
-      if (!error) {
-        resolve();
-      }else{
-        reject('Errrrrrrrror');
-      }
-    }, 3000);
-
-  })
+class Rabit extends animal{
+  constructor(value1,value2) {
+    super(value1);
+    this.secendname = value2;
+  }
+  walk() {
+    //call walk methode in animal
+    super.walk();
+    console.log('--- Jump ---');
+  }
 }
-
-async function getData() {
-  await creatProduct()
-  getProduct();
-}
-getData();
+const Rabit1 = new Rabit('aghazadeh','30YA');
+console.log(Rabit1);
+Rabit1.walk()
 
 
 //--------------------------------------
