@@ -1,36 +1,43 @@
 "use strict";
-// oop: static method/fields
-class animal {
-  static price = 58;
-  constructor(value) {
-    this.name = 'siavash';
-    this.lastname = value;
-    this.age = 28;
-  }
-  walk() {
-    console.log('--- walking ---');
-  }
-  print() {
-    console.log(animal.price);
-  }
+// Promise: multi .then
+// khati
+function create() {
+  return new Promise((resolve,reject) => {
+    setTimeout(function () {
+      resolve(1)
+    }, 1000);
+
+  })
 }
 
-class Rabit extends animal{
-  constructor(value1,value2) {
-    super(value1);
-    this.secendname = value2;
-  }
-  walk() {
-    //call walk methode in animal
-    super.walk();
-    console.log('--- Jump ---');
-  }
+create()
+  .then(result => {console.log(result); return result * 2})
+  .then(result => {console.log(result); return result * 2})
+  .then(result => {console.log(result); console.log('----------------------------------------');})
+
+//------------------------------------------------------------------------
+// movazi
+function create() {
+  return new Promise((resolve,reject) => {
+
+    setTimeout(function () {
+      resolve(1)
+    }, 1000);
+
+  })
 }
-const Rabit1 = new Rabit('aghazadeh','30YA');
-console.log(Rabit1);
-Rabit1.print()
 
+create()
+  .then(result => {console.log(result * 2)})
 
+create()
+  .then(result => {console.log(result * 5)})
+
+create()
+  .then(result => {console.log(result * 10)})
+// function test() {
+//   console.log('--siavash--');
+// }
 //--------------------------------------
 // let products = GetSavedProducts();
 // creatProductDOM(products);
