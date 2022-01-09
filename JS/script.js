@@ -1,43 +1,20 @@
 "use strict";
-// Promise: multi .then
-// khati
-function create() {
-  return new Promise((resolve,reject) => {
-    setTimeout(function () {
-      resolve(1)
-    }, 1000);
+// Promise.all
 
-  })
+function create() {
+  return Promise.all([
+    new Promise((resolve,reject) => {setTimeout(() => {console.log(1); resolve()}, 100);}),
+    new Promise((resolve,reject) => {setTimeout(() => {console.log(2); resolve()}, 2000);}),
+    new Promise((resolve,reject) => {setTimeout(() => {console.log(3); resolve()}, 100);})
+  ])
 }
 
 create()
-  .then(result => {console.log(result); return result * 2})
-  .then(result => {console.log(result); return result * 2})
-  .then(result => {console.log(result); console.log('----------------------------------------');})
+  .then(result => test(), error => alert('oops'))
 
-//------------------------------------------------------------------------
-// movazi
-function create() {
-  return new Promise((resolve,reject) => {
-
-    setTimeout(function () {
-      resolve(1)
-    }, 1000);
-
-  })
+function test() {
+  console.log('--siavash--');
 }
-
-create()
-  .then(result => {console.log(result * 2)})
-
-create()
-  .then(result => {console.log(result * 5)})
-
-create()
-  .then(result => {console.log(result * 10)})
-// function test() {
-//   console.log('--siavash--');
-// }
 //--------------------------------------
 // let products = GetSavedProducts();
 // creatProductDOM(products);
