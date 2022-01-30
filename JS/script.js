@@ -1,32 +1,40 @@
 "use strict";
-// fetch (Get Data): ------------------------------------------------
+
+// axios (Get Data): ------------------------------------------------
 function getData() {
-  fetch('https://jsonplaceholder.typicode.com/users',{method: "GET"})
-    .then(respons => {
-      return respons.json();
-    })
-    .then(data => console.log(data));
+  // fetch('https://jsonplaceholder.typicode.com/users',{method: "GET"})
+  //   .then(respons => {
+  //     return respons.json();
+  //   })
+  //   .then(data => console.log(data));
+  axios
+  .get('https://jsonplaceholder.typicode.com/users')
+  .then(res => console.log(res.data))
 }
 getData();
+
 // fetch (POST Data): ------------------------------------------------
 function postData() {
-  const userData = {
-    id:123,
-    name: 'siavash',
-    last: 'agh',
-    email: 'siavash.agh1380@gmail.com'
-  }
-  fetch('https://jsonplaceholder.typicode.com/users',{
-    method: "POST",
-    body: JSON.stringify(userData),
-    headers: {"content-Type": "application/json"},
-  })
-  .then(respons => {
-    return respons.json();
-  })
-  .then(data => console.log(data));
+    const userData = {
+      id:123,
+      name: 'siavash',
+      last: 'agh',
+      email: 'siavash.agh1380@gmail.com'
+    }
+    // fetch('https://jsonplaceholder.typicode.com/users',{
+    //   method: "POST",
+    //   body: JSON.stringify(userData),
+    //   headers: {"content-Type": "application/json"},
+    // })
+    // .then(respons => {
+    //   return respons.json();
+    // })
+    // .then(data => console.log(data));
+    axios
+    .post('https://jsonplaceholder.typicode.com/users',userData)
+    .then(res => console.log(res.data))
 }
-postData();
+postData()
 
 //--------------------------------------
 // let products = GetSavedProducts();
