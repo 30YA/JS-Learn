@@ -1,20 +1,33 @@
 "use strict";
-// Promise.all
-
-function create() {
-  return Promise.all([
-    new Promise((resolve,reject) => {setTimeout(() => {console.log(1); resolve()}, 100);}),
-    new Promise((resolve,reject) => {setTimeout(() => {console.log(2); resolve()}, 2000);}),
-    new Promise((resolve,reject) => {setTimeout(() => {console.log(3); resolve()}, 100);})
-  ])
+// fetch (Get Data): ------------------------------------------------
+function getData() {
+  fetch('https://jsonplaceholder.typicode.com/users',{method: "GET"})
+    .then(respons => {
+      return respons.json();
+    })
+    .then(data => console.log(data));
 }
-
-create()
-  .then(result => test(), error => alert('oops'))
-
-function test() {
-  console.log('--siavash--');
+getData();
+// fetch (POST Data): ------------------------------------------------
+function postData() {
+  const userData = {
+    id:123,
+    name: 'siavash',
+    last: 'agh',
+    email: 'siavash.agh1380@gmail.com'
+  }
+  fetch('https://jsonplaceholder.typicode.com/users',{
+    method: "POST",
+    body: JSON.stringify(userData),
+    headers: {"content-Type": "application/json"},
+  })
+  .then(respons => {
+    return respons.json();
+  })
+  .then(data => console.log(data));
 }
+postData();
+
 //--------------------------------------
 // let products = GetSavedProducts();
 // creatProductDOM(products);
