@@ -1,34 +1,19 @@
 "use strict";
 
 // axios (Get Data): ------------------------------------------------
-const userData = {
-  id:123,
-  name: 'siavash',
-  last: 'agh',
-  email: 'siavash.agh1380@gmail.com'
+// console.log('sia');
+let userData = null;
+const userData2 = {
+    "id": 5,
+    "name": "Abolfazl",
+    "lastname": "Zarif"
 }
 function getData() {
-  fetch('https://jsonplaceholder.typicode.com/users',{method: "GET"})
-    .then(respons => {
-      return respons.json();
-    })
-    .then(data => console.log(data));
+  fetch('http://localhost:3000/items')
+  .then(response => {return response.json()})
+  .then(data => {userData = data;console.log(userData);})
 }
-// fetch (POST Data): ------------------------------------------------
-function postData() {
-  return new Promise((resolve,reject) => {
-    fetch('https://jsonplaceholder.typicode.com/users',{
-    method: "POST",
-    body: JSON.stringify(userData),
-      headers: {"content-Type": "application/json"},
-    })
-    .then(respons => {
-      return respons.json();
-    })
-    .then(data => resolve(data));
-  })
-  }
-  postData().then(res => console.log(res)).then(getData)
+getData();
 
 //--------------------------------------
 // let products = GetSavedProducts();
