@@ -1,19 +1,12 @@
 "use strict";
-
-// axios (Get Data): ------------------------------------------------
-// console.log('sia');
-let userData = null;
-const userData2 = {
-    "id": 5,
-    "name": "Abolfazl",
-    "lastname": "Zarif"
-}
-function getData() {
-  fetch('http://localhost:3000/items')
-  .then(response => {return response.json()})
-  .then(data => {userData = data;console.log(userData);})
-}
-getData();
+// modular programming (import,export) : ------------------------------------------------
+import {sia,name} from './import-export.js';
+import {sia as numbeer} from './import-export.js';
+import * as utils from './import-export.js';
+//export defult :
+import chert from './import-export.js';
+// import chert,{age} from './import-export.js';
+console.log(age);
 
 //--------------------------------------
 // let products = GetSavedProducts();
