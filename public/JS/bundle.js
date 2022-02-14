@@ -1,0 +1,1 @@
+(()=>{"use strict";(new class{constructor(){this.name="siavash"}run(){console.log(this.name)}}).run()})();
