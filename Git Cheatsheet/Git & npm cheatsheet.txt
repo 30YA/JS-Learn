@@ -1,16 +1,23 @@
 Git config --global user.name "siavash aghazadeh"
 Git config --global user.email siavash.agh@gmail.com 
 Git config --global --list
+
 Git init , Git status
+
 Git add . || add <file>
 Git add patch <file>
+
 Git log --oneline --all --graph
+
 Git commit || Git commit -m "message"
 Git show <here hash of an commit>
+
 Git restore –staged <file>
 Git restore <file>
 Git restore --sourse <commit hash> <file>
+
 Git reset HEAD~2 || Git reset <hash of an commit>
+
 Git branch 
 Git branch <branch name>
 branch <branch name>(<hash of commit>||<HEAD~n>)
@@ -19,16 +26,66 @@ Git switch (switch between branchs)
 Git checkout (switch between branchs)
 (get to master branch and..) Git merge <branch name>
 Git diff <branch name>--<branch name>
+
 Git stash , Git stash -u <= (this for untracked files)
 Git stash list
 Git stash show <stash id>
 Git stash (apply || pop) <stash id>
 Git stash clear
+
 Git remote 
 Git remote add <name> <url>
 Git remote rm <name>
 Git remote rename <old-name> <new-name>
 Git remote show <name>
+
 Git push <remote-name> <branch-name>
 Git clone <url from github>
 Git pull <remote-name>
+
+for ignore some file from git you must make a directory 
+(.gitignore) and write into it. example :
+(dir)/
+(dir)
+// https://www.youtube.com/watch?v=U34ksRtR3w8
+
+
+//------------------------------------------------------------
+//---------------------- npm command -------------------
+//------------------------------------------------------------
+npm init
+npm init -y
+
+npm config set init-(---) "(------)" | ex npm config set init-author-name "siavash"
+npm set init-(---) "(------)"
+npm get init-(---)
+
+npm i (pkg name)
+
+npm uninstal (pkg name)
+npm un (pkg name)
+npm remove (pkg name)
+npm rm (pkg name)
+
+npm i    //for add node/module 
+
+npm i (pkg name)@version (4.1)
+
+npm i --save-dev (pkg name)
+npm i -D (pkg name)
+
+npm i (pkg name) --global
+npm i (pkg name) -g
+
+npm list || npm ls || npm la
+npm list --all
+npm list --depth 0
+
+node (script file) | this fore run program in terminal
+npm run-script (script name in package.json)
+npm run (script name)
+
+npm update
+~ : just update patch
+^ : just update minor
+* : update all

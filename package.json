@@ -1,0 +1,25 @@
+{
+  "name": "js-learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pCompile": "npx babel JS/script.js --out-file JS/script-compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/30YA/JS-Learn.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/30YA/JS-Learn/issues"
+  },
+  "homepage": "https://github.com/30YA/JS-Learn#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/preset-env": "^7.16.11"
+  }
+}
