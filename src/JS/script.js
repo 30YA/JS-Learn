@@ -1,5 +1,6 @@
 "use strict";
 // modular programming (import,export) : ------------------------------------------------
+import "../css/style.css";
 class human{
     constructor(){
         this.name = 'siavash';
