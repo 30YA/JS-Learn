@@ -40,6 +40,16 @@ eval("\n\nmodule.exports = function (i) {\n  return i[1];\n};\n\n//# sourceURL=w
 
 /***/ }),
 
+/***/ "./src/img/sia.jpg":
+/*!*************************!*\
+  !*** ./src/img/sia.jpg ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (\"public/img/sia.jpg\");\n\n//# sourceURL=webpack://js-learn/./src/img/sia.jpg?");
+
+/***/ }),
+
 /***/ "./src/css/style.css":
 /*!***************************!*\
   !*** ./src/css/style.css ***!
@@ -116,7 +126,7 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\n\r\n// modular programming (import,export) : ------------------------------------------------\r\n\r\nclass human{\r\n    constructor(){\r\n        this.name = 'siavash';\r\n    }\r\n    run(){\r\n        console.log(this.name);\r\n    }\r\n}\r\nconst human1 = new human();\r\nhuman1.run();\n\n//# sourceURL=webpack://js-learn/./src/JS/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../css/style.css */ \"./src/css/style.css\");\n/* harmony import */ var _img_sia_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../img/sia.jpg */ \"./src/img/sia.jpg\");\n\r\n// modular programming (import,export) : ------------------------------------------------\r\n\r\n\r\ndocument.querySelector('.imgg').src = _img_sia_jpg__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\n\n//# sourceURL=webpack://js-learn/./src/JS/script.js?");
 
 /***/ })
 
