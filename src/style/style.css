@@ -1,0 +1,5 @@
+@import "./../font/font-face.css";
+body{
+    font-family: "Vazir";
+    background-color: red;
+}

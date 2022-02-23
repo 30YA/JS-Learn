@@ -2,12 +2,13 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    script: "./src/JS/script.js",
+    script: "./src/script.js",
   },
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./public"),
-    // publicPath: "public/",
+    publicPath: "public/",
+    // assetModuleFilename: "fonts/[name].[ext]",
   },
   module: {
     rules: [
@@ -16,16 +17,19 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
-        test: /\.s[ac]ss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name].[ext]",
+        },
       },
       {
-        test: /\.(png|jpe?g|gif)$/i,
-        loader: "file-loader",
-        options: {
-          name: "[name].[ext]",
-          publicPath: "public/img",
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: "asset/resource",
+        generator: {
+          publicPath: "public/img/",
           outputPath: "img",
+          filename: "[name].[ext]",
         },
       },
     ],
