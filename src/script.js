@@ -3,4 +3,5 @@
 import "./style/style.css";
 import picture from "./img/sia.jpg";
 document.querySelector('.imgg').src = picture;
-console.log('sia');
+const siavashh = 'my name is sia';
+console.log(siavashh);

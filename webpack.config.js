@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = {
+  // mode :(development , production , none)
+  mode: "development",
   entry: {
     script: "./src/script.js",
   },
@@ -20,7 +22,7 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: "asset/resource",
         generator: {
-          filename: "fonts/[name].[ext]",
+          filename: "fonts/[name][ext]",
         },
       },
       {
@@ -29,10 +31,19 @@ module.exports = {
         generator: {
           publicPath: "public/img/",
           outputPath: "img",
-          filename: "[name].[ext]",
+          filename: "[name][ext]",
         },
       },
+      {
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          // options: {
+          //   presets: ['@babel/preset-env']
+          // }
+        }
+      }
     ],
   },
-  mode: "development",
 };
