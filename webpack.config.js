@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "./public"),
-    publicPath: "public/",
+    // publicPath: "public/",
     // assetModuleFilename: "fonts/[name].[ext]",
   },
   module: {
@@ -29,7 +30,7 @@ module.exports = {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: "asset/resource",
         generator: {
-          publicPath: "public/img/",
+          publicPath: "./img/",
           outputPath: "img",
           filename: "[name][ext]",
         },
@@ -46,4 +47,10 @@ module.exports = {
       }
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'siavash',
+      template: './src/index.html'
+    })
+  ]
 };

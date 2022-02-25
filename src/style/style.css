@@ -1,7 +1,7 @@
 @import "./../font/font-face.css";
 body{
     font-family: "Vazir";
-    background-color: red;
+    background-color: rgb(133, 200, 255);
 }
 .imgg{
     width: 100px;
