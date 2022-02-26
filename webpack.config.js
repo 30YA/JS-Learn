@@ -1,5 +1,6 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require("path");
 
 module.exports = {
   // mode :(development , production , none)
@@ -13,11 +14,28 @@ module.exports = {
     // publicPath: "public/",
     // assetModuleFilename: "fonts/[name].[ext]",
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "siavash",
+      template: "./src/index.html",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles/[name].css",
+    }),
+  ],
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              // publicPath: "styles/",
+            },
+          },
+          "css-loader",
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -39,18 +57,12 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           // options: {
           //   presets: ['@babel/preset-env']
           // }
-        }
-      }
+        },
+      },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      title: 'siavash',
-      template: './src/index.html'
-    })
-  ]
 };
