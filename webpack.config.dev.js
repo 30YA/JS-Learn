@@ -14,6 +14,13 @@ module.exports = {
     // publicPath: "public/",
     // assetModuleFilename: "fonts/[name].[ext]",
   },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, './public'),
+    },
+    open: true,
+    port: 9000,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "siavash",
