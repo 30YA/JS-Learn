@@ -16,7 +16,7 @@
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/style.css */ \"./src/style/style.css\");\n/* harmony import */ var _style_custome_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/custome.css */ \"./src/style/custome.css\");\n/* harmony import */ var _img_sia_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/sia.jpg */ \"./src/img/sia.jpg\");\n\n\n\n\n\ndocument.querySelector(\".imgg\").src = _img_sia_jpg__WEBPACK_IMPORTED_MODULE_2__;\nvar siavashh = \"my name is sia\";\nconsole.log(siavashh);\n\n//# sourceURL=webpack://js-learn/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style/style.css */ \"./src/style/style.css\");\n/* harmony import */ var _style_custome_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style/custome.css */ \"./src/style/custome.css\");\n/* harmony import */ var _img_sia_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./img/sia.jpg */ \"./src/img/sia.jpg\");\n\n\n\n\n\ndocument.querySelector(\".imgg\").src = _img_sia_jpg__WEBPACK_IMPORTED_MODULE_2__;\nvar siavashh = \"my name is sia\";\nvar ali = 123;\nconsole.log(siavashh);\n\n//# sourceURL=webpack://js-learn/./src/script.js?");
 
 /***/ }),
 

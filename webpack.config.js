@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require("path");
 
 module.exports = {
@@ -9,7 +10,7 @@ module.exports = {
     script: "./src/script.js",
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[contenthash].bundle.js",
     path: path.resolve(__dirname, "./public"),
     // publicPath: "public/",
     // assetModuleFilename: "fonts/[name].[ext]",
@@ -20,8 +21,9 @@ module.exports = {
       template: "./src/index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "styles/[name].css",
+      filename: "styles/[name].[contenthash].css",
     }),
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
