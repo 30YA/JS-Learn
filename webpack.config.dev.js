@@ -7,6 +7,7 @@ module.exports = {
   mode: "development",
   entry: {
     script: "./src/script.js",
+    admin: "./src/admin.js",
   },
   output: {
     filename: "[name].bundle.js",
@@ -25,7 +26,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "siavash",
       template: "./src/index.html",
+      filename: "index.html",
+      chunks: ['script'],
     }),
+    new HtmlWebpackPlugin({
+        title: "siavash",
+        template: "./src/index.html",
+        filename: "admin.html",
+        chunks: ['script','admin'],
+      }),
     new CleanWebpackPlugin(),
   ],
   module: {
