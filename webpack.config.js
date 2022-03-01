@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const webpack = require("webpack");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = {
   entry: {
@@ -34,6 +35,9 @@ const config = {
     }),
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
+    new ESLintPlugin({
+        files: './src',
+    }),
   ],
   module: {
     rules: [
@@ -86,18 +90,16 @@ module.exports = (env, { mode }) => {
         filename: "styles/[name].[contenthash].css",
       })
     );
-    config.module.rules.push(
-        {
-            test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
-            use: {
-              loader: "babel-loader",
-              // options: {
-              //   presets: ['@babel/preset-env']
-              // }
-            },
-        }
-    )
+    config.module.rules.push({
+      test: /\.m?js$/,
+      exclude: /(node_modules|bower_components)/,
+      use: {
+        loader: "babel-loader",
+        // options: {
+        //   presets: ['@babel/preset-env']
+        // }
+      },
+    });
   }
   return config;
 };
