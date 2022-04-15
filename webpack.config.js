@@ -35,9 +35,6 @@ const config = {
     }),
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
-    new ESLintPlugin({
-        files: './src',
-    }),
   ],
   module: {
     rules: [
@@ -82,6 +79,9 @@ module.exports = (env, { mode }) => {
       open: true,
       port: 9000,
     };
+    config.plugins.push(
+        new ESLintPlugin()
+    )
   }
 
   if (!isDevelopment) {
