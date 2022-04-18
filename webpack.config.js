@@ -8,7 +8,7 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const config = {
   entry: {
     script: "./src/script.js",
-    admin: "./src/admin.js",
+    // admin: "./src/admin.js",
   },
   output: {
     filename: "[name].bundle.js",
@@ -27,12 +27,12 @@ const config = {
       filename: "index.html",
       chunks: ["script"],
     }),
-    new HtmlWebpackPlugin({
-      title: "siavash",
-      template: "./src/index.html",
-      filename: "admin.html",
-      chunks: ["script", "admin"],
-    }),
+    // new HtmlWebpackPlugin({
+    //   title: "siavash",
+    //   template: "./src/index.html",
+    //   filename: "admin.html",
+    //   chunks: ["script", "admin"],
+    // }),
     new CleanWebpackPlugin(),
     new webpack.ProgressPlugin(),
   ],
